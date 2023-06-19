@@ -1,7 +1,7 @@
 #ifndef DEF_ARME
 #define DEF_ARME
 
-#include <strings>
+#include <string>
 
 class Arme
 {
