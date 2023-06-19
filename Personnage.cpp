@@ -13,6 +13,11 @@ Personnage::Personnage(string nomArme, int degatsArme) : m_vie(100), m_mana(100)
     m_arme = new Arme(nomArme, degatsArme);    
 }
 
+Personnage :: Personnage(Personnage const& personnageAcopier) : m_vie(personnageAcopier.m_vie), m_mana(personnageAcopier.m_mana), m_arme(nullptr)
+{
+    m_arme = new Arme(*(personnageAcopier.m_arme));
+}
+
 Personnage::~Personnage()
 {
     delete m_arme;
@@ -65,4 +70,17 @@ void Personnage::afficherEtat()
     cout << "Vie : " << m_vie << endl;
     cout << "Mana : " << m_mana << endl;
     m_arme->afficher();
+}
+
+Personnage& Personnage::operator=(Personnage const& personnageACopier) 
+{
+    if(this != &personnageACopier)
+    //On vérifie que l'objet n'est pas le même que celui reçu en argument
+    {
+        m_vie = personnageACopier.m_vie; //On copie tous les champs
+        m_mana = personnageACopier.m_mana;
+	delete m_arme;
+        m_arme = new Arme(*(personnageACopier.m_arme));
+    }
+    return *this; //On renvoie l'objet lui-même
 }

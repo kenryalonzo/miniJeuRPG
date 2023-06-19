@@ -7,9 +7,11 @@ using namespace std;
 int main()
 {
     // Création des personnages
-    Personnage david, goliath("Epée aiguisée", 20);
+    Personnage goliath("Epée aiguisée", 20);
+    Personnage david = goliath;
 
     // Au combat !
+    // quoi d autre
     goliath.attaquer(david);
     david.boirePotionDeVie(20);
     goliath.attaquer(david);
