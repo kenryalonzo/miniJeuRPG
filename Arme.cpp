@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Arme.hpp"
 
 using namespace std;

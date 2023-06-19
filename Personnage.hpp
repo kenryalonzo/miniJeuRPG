@@ -1,7 +1,6 @@
 #ifndef DEF_PERSONNAGE
 #define DEF_PERSONNAGE
 
-#include <iostream>
 #include <string>
 #include "Arme.hpp"
 
@@ -23,7 +22,7 @@ class Personnage
 
     int m_vie;
     int m_mana;
-    Arme m_arme;
+    Arme *m_arme;
 };
 
 #endif
